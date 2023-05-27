@@ -1,16 +1,13 @@
-const URL = process.env.REACT_APP_API_KEY;
 
-// Videos
 
-// Index/Get all
-export function getAllVideos() {
-  return fetch(`${URL}/videos`).then((response) => response.json());
-}
+
+// GET https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=surfing&key=[YOUR_API_KEY] HTTP/1.1
+
 
 // Video/Get one
-export function getOneVideo(id) {
-  return fetch(`${URL}/videos/${id}`).then((response) => response.json())
-}
+// export function getOneVideo(id) {
+//   return fetch(`${URL}/videos/${id}`).then((response) => response.json())
+// }
 
 
 
