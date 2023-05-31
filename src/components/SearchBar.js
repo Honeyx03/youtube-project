@@ -1,15 +1,5 @@
-import { useState } from "react"
-import VideosList from "./VideosList"
 
-export default function SearchBar() {
-    const [searchVideo, setSearchVideo] = useState('')
-
-    function handleSearchChange(event) {
-        event.preventDefault()
-        const typed = event.target.searchVideo.value;
-        console.log(typed)
-        setSearchVideo(typed);
-    }
+export default function SearchBar({handleSearchChange}) {
 
   return (
     <div>
@@ -20,7 +10,6 @@ export default function SearchBar() {
                 </label>
                 <input type="submit" value="Submit"/>
             </form>
-            {/* <VideosList searchVideo={searchVideo}/> */}
         </div>
     </div>
   );
