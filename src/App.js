@@ -1,26 +1,47 @@
-// Do not add .gitignore or .env
-import logo from './logo.svg';
+// Do not git add .gitignore or .env
+
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SearchBar from './components/SearchBar';
+import { useState } from "react"
+import VideosList from "./components/VideosList"
+
+/*
+components
+*/
+import NavBar from './components/NavBar';
+import Home from './components/Home/Home.js';
+import About from './components/About.js';
 
 function App() {
+
+  const [searchVideo, setSearchVideo] = useState('')
+  const [teamMembers] = useState("")
+
+  function handleSearchChange(event) {
+      event.preventDefault()
+      let typed = event.target.searchVideo.value;
+      if(typed === ''){
+        console.log("error")
+      } else {
+        setSearchVideo(typed);
+      }
+
+  }
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+    <h1> hola </h1>
+    {/* <NavBar />
+      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
+        <Router>
+          <Routes>
+            <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
+            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+          </Routes>
+        </Router> */}
+      </>
+
   );
 }
 
