@@ -13,7 +13,7 @@ function App() {
   const [teamMembers] = useState("")
   return (
   <>
-    <Nav />
+    <NavBar />
     <Router>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
