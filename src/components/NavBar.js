@@ -1,23 +1,22 @@
-import Home from "./Home";
 import { Link } from "react-router-dom";
 
-export const NavBar = () => {
+
+
+export default function NavBar()  {
     return (
         <header>
             <div className="logo">
                 <h1>
-                    <a href = "/">
-                        YouTube
-                    </a>
+                    <Link href = "/">YouTube</Link>
                 </h1>
             </div>
             <aside>
                 <ul>
                     <li>
-                        <a href="/">Home</a>
+                        <Link href="/">Home</Link>
                     </li>
                     <li>
-                        <a href="/about">About</a>
+                        <Link href="/about">About</Link>
                     </li>
                 </ul>
             </aside>

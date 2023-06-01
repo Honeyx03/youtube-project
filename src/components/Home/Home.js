@@ -1,7 +1,6 @@
-import SearchBar from "./components/SearchBar.js";
-import { link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const VideoNav = () => {
+export default function VideoNav()  {
     //SearchBar fxn
     return (
         <nav className="video-nav">
