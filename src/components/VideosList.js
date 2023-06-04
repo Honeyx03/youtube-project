@@ -23,7 +23,8 @@ export default function VideosList({searchVideo}) {
   return (
     <div>
         <h1> {allVideos.map((video, i) => {
-            return <p key={i}>{video.snippet.title}</p>
+            // return <p key={i}>{video.snippet.title}</p>
+            return <YouTube videoId={video.id.videoId}/>
         })}</h1>
     </div>
   );
