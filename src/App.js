@@ -31,9 +31,8 @@ function App() {
  
   return (
   <>
-    <h1> hola </h1>
-    {/* <NavBar />
-      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
+    <NavBar />
+      {/* <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
         <Router>
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
@@ -41,7 +40,6 @@ function App() {
           </Routes>
         </Router> */}
       </>
-
   );
 }
 
