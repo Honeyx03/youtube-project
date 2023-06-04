@@ -8,10 +8,17 @@ header a {
     color: white;
 }
 
+.logo {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
 .tabs ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    font-weight: 600;
+    margin: 3px;
 }
 
 .tabs li {
