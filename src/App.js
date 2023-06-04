@@ -1,7 +1,7 @@
 // Do not git add .gitignore or .env
 
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SearchBar from './components/SearchBar';
 import { useState } from "react"
 import VideosList from "./components/VideosList"

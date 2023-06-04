@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-
 export default function NavBar()  {
     return (
         <header>
             <div className="logo">
                 <h1>
                     <Link to="/">YouTube</Link>
+
                 </h1>
             </div>
             <aside className="tabs">
