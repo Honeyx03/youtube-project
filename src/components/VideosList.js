@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import YouTube from 'react-youtube';
 const URL = process.env.REACT_APP_API_KEY;
 
@@ -22,9 +22,11 @@ export default function VideosList({searchVideo}) {
 
   return (
     <div>
-        <h1> {allVideos.map((video, i) => {
-            return <p key={i}>{video.snippet.title}</p>
-        })}</h1>
+        <div> {allVideos && allVideos.map((video, i) => {
+            //return <p key={i}>{video.snippet.title}</p>
+            return <YouTube videoId={video.id.videoId}/>
+        })}
+        </div>
     </div>
   );
 }

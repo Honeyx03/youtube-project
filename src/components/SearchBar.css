@@ -1,4 +1,4 @@
-.input-group {
+.search-bar {
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -8,7 +8,7 @@
     padding-right: 300px;
 }
 
-.input-group .btn {
+.search-bar .button1 {
     background-color: red;
     color: white;
     font-weight: 500;

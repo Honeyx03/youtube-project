@@ -32,13 +32,11 @@ function App() {
   return (
   <>
     <NavBar />
-      {/* <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
-        <Router>
+      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
-            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+            {/* <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route> */}
           </Routes>
-        </Router> */}
       </>
   );
 }
