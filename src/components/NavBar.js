@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "./NavBar.css";
 
 
 export default function NavBar()  {
@@ -7,16 +7,16 @@ export default function NavBar()  {
         <header>
             <div className="logo">
                 <h1>
-                    <Link href = "/">YouTube</Link>
+                    <Link to="/">YouTube</Link>
                 </h1>
             </div>
-            <aside>
+            <aside className="tabs">
                 <ul>
                     <li>
-                        <Link href="/">Home</Link>
+                        <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link href="/about">About</Link>
+                        <Link to="/about">About</Link>
                     </li>
                 </ul>
             </aside>
