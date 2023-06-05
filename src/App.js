@@ -34,7 +34,9 @@ function App() {
   return (
   <>
     <NavBar />
+
       <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange}  showMessage={showMessage}/>
+
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
             {/* <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route> */}
