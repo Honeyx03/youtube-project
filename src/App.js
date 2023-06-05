@@ -31,17 +31,13 @@ function App() {
  
   return (
   <>
-    <h1> hola </h1>
-    {/* <NavBar />
+    <NavBar />
       <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
-        <Router>
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
-            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+            {/* <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route> */}
           </Routes>
-        </Router> */}
       </>
-
   );
 }
 
