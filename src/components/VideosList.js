@@ -7,7 +7,7 @@ export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
     
     
-        
+   
 
     useEffect(() => {
         if (searchVideo === "") {
@@ -26,7 +26,7 @@ export default function VideosList({searchVideo}) {
       },[searchVideo])
 
 
-
+  
 
 
   return (
@@ -37,7 +37,7 @@ export default function VideosList({searchVideo}) {
                 return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
                     <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)
             })}
-           
+        
         </div>
     </div>
   );
