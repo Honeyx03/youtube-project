@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import YouTube from 'react-youtube';
 import "./VideoList.css";
 const URL = process.env.REACT_APP_API_KEY;
@@ -6,9 +6,6 @@ const URL = process.env.REACT_APP_API_KEY;
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
     
-    
-        
-
     useEffect(() => {
         if (searchVideo === "") {
             console.log ("error")
@@ -24,10 +21,6 @@ export default function VideosList({searchVideo}) {
         )
         }
       },[searchVideo])
-
-
-
-
 
   return (
     <div className="col-md-10 container">
