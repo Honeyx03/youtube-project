@@ -1,6 +1,7 @@
 import React from "react";
 
-function Modal () {
+function Modal({setCatchError}){
+    setCatchError(true)
     return (
         <div className="modalBackground">
             <div className="modalContainer">
@@ -19,3 +20,5 @@ function Modal () {
         </div>
     );
 }
+
+export default Modal

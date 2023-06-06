@@ -1,11 +1,12 @@
 import { useEffect,useState } from "react";
 import YouTube from 'react-youtube';
 import "./VideoList.css";
+import Modal from "./Modal";
 const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
-    
+    // const [catchError, setCatchError] = useState(false)
     
    
 
@@ -19,7 +20,8 @@ export default function VideosList({searchVideo}) {
             setAllVideos(data.items) 
         })
         .catch( (error) => {
-            console.error(error)
+            // setCatchError()
+            console.log("There's an error.")
         }
         )
         }
