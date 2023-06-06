@@ -23,15 +23,20 @@ export default function VideosList({searchVideo}) {
         }
       },[searchVideo])
 
+
+
   return (
     <div className="col-md-4 container">
         <div className="row">
-            {allVideos.length < 1 ? null : allVideos.map((video, i) => {
-                // return <p key={i}>{video.snippet.title}</p>
+            {allVideos.length < 1 ? null : allVideos.map(video=> {
                 return (
                 <div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
-                    <Link to={`/video/${video.id.videoId}`}>{video.snippet.title}</Link>
-                    <Video video={video}></Video>
+                    <Link 
+                    to={`/video/${video.id.videoId}`} 
+                    >
+                        <Video video={video}></Video>
+                    </Link>
+                    
                 </div>)
             })}
         </div>

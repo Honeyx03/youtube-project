@@ -1,12 +1,19 @@
 import YouTube from 'react-youtube';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import {useState } from "react";
 
-export default function Video() {
+export default function Video({video}) {
+    const [oneVideo, setOneVideo] = useState('')
     const { id } = useParams();
+    let navigate = useNavigate();
 
-    return (
+    function test(id){
+        navigate(`/video/${id}`)
+    }
+
+  return (
     <>
-        <YouTube videoId={id} opts={{ width: "100%", height: "auto" }}/> 
+        <YouTube videoId={id ?? video.id.videoId} onStateChange={()=>test(video.id.videoId)} opts={{ width: "100%", height: "auto" }}/> 
     </>
-    );
+  );
 }
