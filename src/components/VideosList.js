@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
-import YouTube from 'react-youtube';
+
+import { useEffect,useState } from "react";
+import { Link } from "react-router-dom";
 import "./VideoList.css";
+import Video from "./Video";
 const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
@@ -27,10 +29,12 @@ export default function VideosList({searchVideo}) {
         <div className="row">
             {allVideos.length < 1 ? null : allVideos.map((video, i) => {
                 // return <p key={i}>{video.snippet.title}</p>
-                return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
-                    <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)
+                return (
+                <div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
+                    <Link to={`/video/${video.id.videoId}`}>{video.snippet.title}</Link>
+                    <Video video={video}></Video>
+                </div>)
             })}
-           
         </div>
     </div>
   );

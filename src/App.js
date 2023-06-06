@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SearchBar from './components/SearchBar';
 import { useState } from "react"
 import VideosList from "./components/VideosList"
+import Video from './components/Video';
 
 /*
 components
@@ -39,7 +40,9 @@ function App() {
 
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
-            {/* <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route> */}
+            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+            <Route path="/video/:id" exact={true} element={<Video/>}></Route>
+
           </Routes>
       </>
   );
