@@ -6,7 +6,7 @@ const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
-    // const [catchError, setCatchError] = useState(false)
+    
     
    
 
@@ -18,10 +18,11 @@ export default function VideosList({searchVideo}) {
         `).then((response) => response.json())
         .then(data => {
             setAllVideos(data.items) 
+            console.log("hello.")
         })
         .catch( (error) => {
-            // setCatchError()
             console.log("There's an error.")
+            // Modal(error.message)
         }
         )
         }
@@ -34,7 +35,7 @@ export default function VideosList({searchVideo}) {
   return (
     <div className="col-md-10 container">
         <div className="row">
-            {allVideos.length < 1 ? null : allVideos.map((video, i) => {
+            {allVideos.length < 1 ? <p>hi</p> : allVideos.map((video, i) => {
                 // return <p key={i}>{video.snippet.title}</p>
                 return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
                     <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)

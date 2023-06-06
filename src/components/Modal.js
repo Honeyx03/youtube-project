@@ -1,7 +1,7 @@
 import React from "react";
 
-function Modal({setCatchError}){
-    setCatchError(true)
+function Modal(errorMessage){
+    
     return (
         <div className="modalBackground">
             <div className="modalContainer">
