@@ -35,12 +35,15 @@ function App() {
   return (
   <>
     <NavBar />
-      <SearchBar handleSearchChange={handleSearchChange} />
           <Routes>
-            <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
+            <Route path="/" element={
+              <>
+                <SearchBar handleSearchChange={handleSearchChange} />
+                <VideosList searchVideo={searchVideo}/>
+              </>
+            }></Route>
             <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
             <Route path="/video/:id" exact={true} element={<Video/>}></Route>
-
           </Routes>
       </>
   );
