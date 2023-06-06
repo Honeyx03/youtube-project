@@ -28,16 +28,14 @@ function App() {
         console.log("error")
       } else {
         setSearchVideo(typed);
+        typed = ''
       }
-
   }
  
   return (
   <>
     <NavBar />
-
-      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange}  showMessage={showMessage}/>
-
+      <SearchBar handleSearchChange={handleSearchChange} />
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
             <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
