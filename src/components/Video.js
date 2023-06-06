@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import {useState } from "react";
 
 export default function Video({video}) {
-    const [oneVideo, setOneVideo] = useState('')
     const { id } = useParams();
     let navigate = useNavigate();
 
