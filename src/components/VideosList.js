@@ -1,3 +1,4 @@
+
 import { useEffect,useState } from "react";
 import { Link } from "react-router-dom";
 import "./VideoList.css";
@@ -24,7 +25,7 @@ export default function VideosList({searchVideo}) {
       },[searchVideo])
 
   return (
-    <div className="col-md-4 container">
+    <div className="col-md-10 container">
         <div className="row">
             {allVideos.length < 1 ? null : allVideos.map((video, i) => {
                 // return <p key={i}>{video.snippet.title}</p>

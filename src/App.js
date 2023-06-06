@@ -18,9 +18,11 @@ function App() {
 
   const [searchVideo, setSearchVideo] = useState('')
   const [teamMembers] = useState("")
+  const [showMessage, setShowMessage] = useState(true);
 
   function handleSearchChange(event) {
       event.preventDefault()
+      setShowMessage(false)
       let typed = event.target.searchVideo.value;
       if(typed === ''){
         console.log("error")
@@ -33,11 +35,14 @@ function App() {
   return (
   <>
     <NavBar />
-      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
+
+      <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange}  showMessage={showMessage}/>
+
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
             <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
             <Route path="/video/:id" exact={true} element={<Video/>}></Route>
+
           </Routes>
       </>
   );
