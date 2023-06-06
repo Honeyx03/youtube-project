@@ -6,9 +6,12 @@ const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
+    const [modal, setModal] = useState(false)
     
-    
-   
+   function handleModal () {
+    setModal(!modal)
+    console.log("hi.")
+   }
 
     useEffect(() => {
         if (searchVideo === "") {
@@ -22,10 +25,9 @@ export default function VideosList({searchVideo}) {
         })
         .catch( (error) => {
             console.log("There's an error.")
-            // Modal(error.message)
-        }
+         }
         )
-        }
+       }
       },[searchVideo])
 
 
@@ -35,7 +37,8 @@ export default function VideosList({searchVideo}) {
   return (
     <div className="col-md-10 container">
         <div className="row">
-            {allVideos.length < 1 ? <p>hi</p> : allVideos.map((video, i) => {
+            {modal ?? <Modal handleModal={handleModal}/>}
+            {allVideos.length < 1 ? <Modal/> : allVideos.map((video, i) => {
                 // return <p key={i}>{video.snippet.title}</p>
                 return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
                     <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)

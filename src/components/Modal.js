@@ -1,11 +1,11 @@
 import React from "react";
 
-function Modal(errorMessage){
+function Modal({handleModal}){
     
     return (
         <div className="modalBackground">
             <div className="modalContainer">
-                    <button> X </button>
+                    <button onClick={handleModal}> X </button>
                 <div className="title">
                     <h1> Whoops... nothing to find here! </h1>
                 </div>
