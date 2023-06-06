@@ -17,11 +17,11 @@ function App() {
 
   const [searchVideo, setSearchVideo] = useState('')
   const [teamMembers] = useState("")
-  const [showMessage, setShowMessage] = useState(true);
+  // const [showMessage, setShowMessage] = useState(true);
 
   function handleSearchChange(event) {
       event.preventDefault()
-      setShowMessage(false)
+      // setShowMessage(false)
       let typed = event.target.searchVideo.value;
       if(typed === ''){
         console.log("error")
