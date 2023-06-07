@@ -30,16 +30,28 @@ export default function VideosList({searchVideo}) {
        }
       },[searchVideo])
 
+      const [modalButton, setModalButton] = useState("shown")
 
-  
-
+      function handleModalButton() {
+         if(modalButton === "shown"){
+             setModalButton("hidden")
+             console.log("also worked.")
+         } else {
+             setModalButton("shown")
+         }
+      }
+       
+      useEffect(() => {
+        if (allVideos.length < 1) {
+            setModalButton("shown")
+        }
+      },[allVideos])
+      
 
   return (
     <div className="col-md-10 container">
         <div className="row">
-            {modal ?? <Modal handleModal={handleModal}/>}
-            {allVideos.length < 1 ? <Modal/> : allVideos.map((video, i) => {
-                // return <p key={i}>{video.snippet.title}</p>
+            {allVideos.length < 1 ? <Modal handleModalButton={handleModalButton} modalButton={modalButton}/> : allVideos.map((video, i) => {
                 return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
                     <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)
             })}
