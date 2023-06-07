@@ -12,9 +12,10 @@ components
 import NavBar from './components/NavBar';
 import Home from './components/Home/Home.js';
 import About from './components/About.js';
+import {TeamMembers} from './components/TeamMembersArray'
 
 function App() {
-
+console.log(TeamMembers)
   const [searchVideo, setSearchVideo] = useState('')
   const [teamMembers] = useState("")
 
@@ -31,17 +32,13 @@ function App() {
  
   return (
   <>
-    <h1> hola </h1>
-    {/* <NavBar />
+    <NavBar />
       <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} />
-        <Router>
           <Routes>
             <Route path="/" element={<VideosList searchVideo={searchVideo}/>}></Route>
-            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+            <Route path="/about" element={<About TeamMembers={TeamMembers}/>}></Route>
           </Routes>
-        </Router> */}
       </>
-
   );
 }
 
