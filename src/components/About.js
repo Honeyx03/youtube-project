@@ -89,7 +89,7 @@ export default function About({TeamMembers} )  {
      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src={imgNoni} alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
-          <h5 class="mb-0">Noni Porter</h5><span class="small text-uppercase text-muted">Instrumental in Routing React Links, Developing NavBar functionality, and Css Styling.</span>
+          <h5 class="mb-0">Noni Porter</h5><span class="small text-uppercase text-muted">Instrumental in Routing React Links, Developing NavBar functionality, & Css Styling.</span>
           <a href="https://github.com/Honeyx03" class="btn btn-light px-5 rounded-pill shadow-sm">Find Me On Github</a>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
