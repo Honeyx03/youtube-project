@@ -13,15 +13,17 @@ components
 import NavBar from './components/NavBar';
 import About from './components/About.js';
 
+
 function App() {
 
   const [searchVideo, setSearchVideo] = useState('')
   const [teamMembers] = useState("")
-  // const [showMessage, setShowMessage] = useState(true);
+  const [showMessage, setShowMessage] = useState(true);
 
   function handleSearchChange(event) {
       event.preventDefault()
-      // setShowMessage(false)
+      setShowMessage(false)
+
       let typed = event.target.searchVideo.value;
       if(typed === ''){
         console.log("error")
@@ -37,7 +39,7 @@ function App() {
           <Routes>
             <Route path="/" element={
               <>
-                <SearchBar handleSearchChange={handleSearchChange} />
+                <SearchBar searchVideo={searchVideo} handleSearchChange={handleSearchChange} showMessage={showMessage}/>
                 <VideosList searchVideo={searchVideo}/>
               </>
             }></Route>
