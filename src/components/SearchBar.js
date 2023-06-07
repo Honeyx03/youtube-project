@@ -1,6 +1,6 @@
 import "./SearchBar.css";
 
-export default function SearchBar({handleSearchChange}) {
+export default function SearchBar({handleSearchChange, showMessage}) {
 
   return (
     <div>
@@ -12,6 +12,13 @@ export default function SearchBar({handleSearchChange}) {
                 <input type="submit" value="Submit" className="button1"/>
             </form>
         </div>
+        {showMessage && (
+        <div>  
+          <div className="message">
+            <p>No search results yet, please make a search.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
