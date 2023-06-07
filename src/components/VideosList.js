@@ -1,14 +1,15 @@
+
 import { useEffect,useState } from "react";
-import YouTube from 'react-youtube';
+import { Link } from "react-router-dom";
 import "./VideoList.css";
 import Modal from "./Modal";
+import Video from "./Video";
 const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
     const [modalButton, setModalButton] = useState("shown")
-
-
+    
     useEffect(() => {
         if (searchVideo === "") {
             console.log ("error")
@@ -26,8 +27,7 @@ export default function VideosList({searchVideo}) {
         )
        }
       },[searchVideo])
-
-      
+ 
       function handleModalButton() {
          if(modalButton === "shown"){
              setModalButton("hidden")
@@ -42,16 +42,21 @@ export default function VideosList({searchVideo}) {
             setModalButton("shown")
         }
       },[allVideos, searchVideo])
-      
 
   return (
     <div className="col-md-10 container">
         <div className="row">
-            {allVideos.length < 1 ? <Modal handleModalButton={handleModalButton} modalButton={modalButton}/> : allVideos.map((video, i) => {
-                return (<div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
-                    <YouTube videoId={video.id.videoId} opts={{ width: "100%", height: "auto" }}/> </div>)
+            {allVideos.length < 1 ? <Modal handleModalButton={handleModalButton} modalButton={modalButton}/> : allVideos.map(video=> {
+                return (
+                <div className="col-sm-6 col-md-6 col-lg-6" key={video.id.videoId}>
+                    <Link 
+                    to={`/video/${video.id.videoId}`} 
+                    >
+                        <Video video={video}></Video>
+                    </Link>
+                    
+                </div>)
             })}
-        
         </div>
     </div>
   );
