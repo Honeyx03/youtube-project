@@ -6,16 +6,13 @@ const URL = process.env.REACT_APP_API_KEY;
 
 export default function VideosList({searchVideo}) {
     const [allVideos, setAllVideos] = useState([])
-    const [modal, setModal] = useState(false)
-    
-   function handleModal () {
-    setModal(!modal)
-    console.log("hi.")
-   }
+    const [modalButton, setModalButton] = useState("shown")
+
 
     useEffect(() => {
         if (searchVideo === "") {
             console.log ("error")
+            setModalButton("hidden")
         } else {
         fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchVideo}&kind=video&type=video&maxResults=4&key=${URL}
         `).then((response) => response.json())
@@ -30,8 +27,7 @@ export default function VideosList({searchVideo}) {
        }
       },[searchVideo])
 
-      const [modalButton, setModalButton] = useState("shown")
-
+      
       function handleModalButton() {
          if(modalButton === "shown"){
              setModalButton("hidden")
@@ -42,10 +38,10 @@ export default function VideosList({searchVideo}) {
       }
        
       useEffect(() => {
-        if (allVideos.length < 1) {
+        if (allVideos.length < 1 && searchVideo !== "") {
             setModalButton("shown")
         }
-      },[allVideos])
+      },[allVideos, searchVideo])
       
 
   return (
