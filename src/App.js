@@ -12,12 +12,12 @@ components
 */
 import NavBar from './components/NavBar';
 import About from './components/About.js';
+import {TeamMembers} from './components/TeamMembersArray'
 
 
 function App() {
-
+console.log(TeamMembers)
   const [searchVideo, setSearchVideo] = useState('')
-  const [teamMembers] = useState("")
   const [showMessage, setShowMessage] = useState(true);
 
   function handleSearchChange(event) {
@@ -43,7 +43,7 @@ function App() {
                 <VideosList searchVideo={searchVideo}/>
               </>
             }></Route>
-            <Route path="/about" element={<About teamMembers={teamMembers}/>}></Route>
+            <Route path="/about" element={<About TeamMembers={TeamMembers}/>}></Route>
             <Route path="/video/:id" exact={true} element={<Video/>}></Route>
           </Routes>
       </>
